@@ -10,7 +10,6 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -18,11 +17,11 @@ public class Checkout {
 
     @Id
     @GeneratedValue
-    public long id;
+    private long id;
 
     @OneToMany
     @JoinColumn(name = "product_id")
-    public List<Product> products;
+    private List<Product> products;
 
     private BigDecimal subTotal;
     private BigDecimal shipping;

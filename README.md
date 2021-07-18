@@ -217,5 +217,7 @@
 		
 ## Frameworks
 
-  Foi utilizado no projeto os frameworks SpringBoot e SpringJPA, utilizei ambos por ser os que tenho familiaridade e pelo SpringBoot auxiliar na utilização dos EndPoints e o JPA auxiliar na comunicação com o banco de dados.
+Foi utilizado no projeto o framework Spring-Boot, utilizei os módulos para web(Spring-Web) e banco de dados(Spring-Data). Utilizei ambos por ser os que tenho familiaridade e por eles auxiliarem na manipulação de EndPoints e integração com o banco de dados.
+  
+Outro framework utilizado foi o Lombok, que auxilia no desenvolvimento, fazendo com que seja necessário menos escrita de código, pois ele possui uma inteligencia para gerar esses códigos, nesse projeto, ele me ajudou nos Getters, Setters e construtores.
   

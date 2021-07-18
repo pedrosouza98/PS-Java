@@ -12,7 +12,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -20,14 +19,14 @@ public class Product {
 
    @Id
    @GeneratedValue
-   public long id;
+   private long id;
 
-   public String name;
+   private String name;
 
-   public BigDecimal price;
+   private BigDecimal price;
 
-   public short score;
+   private short score;
 
-   public String image;
+   private String image;
 
 }
