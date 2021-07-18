@@ -54,8 +54,11 @@ public class CheckoutService {
         checkout.setTotal(checkout.getSubTotal().add(checkout.getShipping()));
     }
 
-    public Checkout get(Long id) {
+    public Checkout get(Long id, String productOrder) {
         Checkout checkout = checkoutRepository.findById(id).get();
+        if (productOrder != null && !productOrder.isEmpty()) {
+            checkout.setProducts(getSortedProducts(checkout, productOrder));
+        }
         return checkout;
     }
 

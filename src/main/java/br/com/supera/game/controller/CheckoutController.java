@@ -3,13 +3,8 @@ package br.com.supera.game.controller;
 import br.com.supera.game.service.CheckoutService;
 import br.com.supera.game.store.Checkout;
 import java.util.List;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -31,8 +26,9 @@ public class CheckoutController {
     }
 
     @GetMapping("/{id}")
-    public Checkout get(@PathVariable Long id){
-        return checkoutService.get(id);
+    public Checkout get(@PathVariable Long id,
+                        @RequestParam(value = "order", required = false, defaultValue = "") String productOrder) {
+        return checkoutService.get(id, productOrder);
     }
 
 }

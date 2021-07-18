@@ -1,5 +1,107 @@
 # Avaliação Java
 
+## O que é essa API ?
+  Se trata de uma camada de serviço de um carrinho de compras para um ecommerce.
+  Calcula o valor do frete e define frete gratis para valores acima de 250,00.
+  É possível também ordenar os produtos escolhidos.
+  
+## Execução e Ferramentas
+  O projeto foi feito pela IDE IntelliJ, onde a execução e compilação do projeto é feita.
+  Para visualização das EndPoints criadas, foi utilizado o Postman, utilizando os métodos de Get, Post e Put.
+  
+ Para executar o projeto, é preciso clicar em "Run" no IntelliJ, e então, após o código rodar, inserir os EndPoints abaixo no Postman com seus devidos métodos. (se necessário, atualize o Maven no IntelliJ)
+  
+## EndPoints
+* http://localhost:8080/product
+
+  Lista todos os produtos disponíveis com suas características.
+  		
+		{
+			"id": 12,
+			"name": "Mortal Kombat XL",
+			"price": 69.99,
+			"score": 150,
+			"image": "mortal-kombat-xl.png"
+		}
+		
+
+* http://localhost:8080/checkout/{id}
+
+  Cria e atualiza o carrinho de compras com os itens inseridos e calcula e informa o valor do frete.
+  
+  	
+	  	{
+		    "id": 1,
+		    "products": [
+			{
+			    "id": 12,
+			    "name": "Mortal Kombat XL",
+			    "price": 69.99,
+			    "score": 150,
+			    "image": "mortal-kombat-xl.png"
+			},
+			{
+			    "id": 31,
+			    "name": "Terra Média: Sombras de Mordor",
+			    "price": 79.99,
+			    "score": 50,
+			    "image": "terra-media-sombras-de-mordor.png"
+			},
+			{
+			    "id": 74,
+			    "name": "Shards of Darkness",
+			    "price": 71.94,
+			    "score": 400,
+			    "image": "shards-of-darkness.png"
+			}
+		    ],
+		    "subTotal": 221.92,
+		    "shipping": 30.00,
+		    "total": 251.92
+		}
+	
+* http://localhost:8080/checkout/{id}?order=name
+
+  Define por ordem alfabética a posição dos itens.
+  
+  	
+  		{
+		    "id": 1,
+		    "products": [
+			{
+			    "id": 12,
+			    "name": "Mortal Kombat XL",
+			    "price": 69.99,
+			    "score": 150,
+			    "image": "mortal-kombat-xl.png"
+			},
+			{
+			    "id": 74,
+			    "name": "Shards of Darkness",
+			    "price": 71.94,
+			    "score": 400,
+			    "image": "shards-of-darkness.png"
+			},
+			{
+			    "id": 31,
+			    "name": "Terra Média: Sombras de Mordor",
+			    "price": 79.99,
+			    "score": 50,
+			    "image": "terra-media-sombras-de-mordor.png"
+			}
+		    ],
+		    "subTotal": 221.92,
+		    "shipping": 30.00,
+		    "total": 251.92
+		}
+		
+		
+## Frameworks
+
+  Foi utilizado no projeto os frameworks SpringBoot e SpringJPA, utilizei ambos por ser os que tenho familiaridade e pelo SpringBoot auxiliar na utilização dos EndPoints e o JPA auxiliar na comunicação com o banco de dados.
+  
+# Desafio
+
 
 ## Descrição
 
